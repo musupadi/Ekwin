@@ -10,10 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoAction">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.ui.Home.Materi.MateriActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.ui.Home.Jadwal.JadwalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

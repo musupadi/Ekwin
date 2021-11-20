@@ -2,13 +2,17 @@ package com.ascendant.ekwin.Activity.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.ascendant.ekwin.R;
+import com.ascendant.ekwin.SharedPreferance.DB_Helper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +30,8 @@ public class AboutFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    ImageView Logout;
+    DB_Helper dbHelper;
     public AboutFragment() {
         // Required empty public constructor
     }
@@ -62,5 +68,19 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_about, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        dbHelper=new DB_Helper(getActivity());
+        Logout = view.findViewById(R.id.ivLogout);
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dbHelper.userLogout(getActivity());
+            }
+        });
     }
 }

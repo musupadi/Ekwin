@@ -2,10 +2,13 @@ package com.ascendant.ekwin.SharedPreferance;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
+
+import com.ascendant.ekwin.Activity.LoginActivity;
 
 public class DB_Helper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "ekwin.db";
@@ -49,5 +52,7 @@ public class DB_Helper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM "+TABLE_NAME+"");
         Toast.makeText(context, "Logout Berhasil", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
     }
 }

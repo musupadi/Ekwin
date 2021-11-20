@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoAction">
         <activity
+            android:name=".Activity.ui.Home.Umur.UmurActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.ui.Home.Materi.MateriActivity"
             android:exported="true" />
         <activity

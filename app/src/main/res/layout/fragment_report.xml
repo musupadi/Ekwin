@@ -3,12 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ui.ReportFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.ui.Home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+        <LinearLayout
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Report"
+                android:gravity="center|left"
+                android:textSize="@dimen/header_text"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/gotham"/>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/logout"
+                android:id="@+id/ivLogout"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>

@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroServer {
 
-    private static final String base_url = "https://ekwin.fabakonsultan.com/api/";
+    private static final String base_url = "https://jadwalibadah.the-urbandev.com/api/";
     private static Retrofit retrofit;
 
     public static Retrofit getClient(){

@@ -14,6 +14,8 @@ public class ResponseArrayObject {
     @Expose
     List<DataModel> data;
 
+
+
     public String getStatus() {
         return status;
     }

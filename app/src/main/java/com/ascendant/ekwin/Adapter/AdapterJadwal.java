@@ -5,13 +5,17 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ascendant.ekwin.Activity.ui.Home.Jadwal.JadwalActivity;
 import com.ascendant.ekwin.Method.Musupadi;
 import com.ascendant.ekwin.Model.DataModel;
 import com.ascendant.ekwin.R;
@@ -21,8 +25,12 @@ import java.util.List;
 
 public class AdapterJadwal extends RecyclerView.Adapter<AdapterJadwal.HolderData> {
     private List<DataModel> mList;
+
+    private List<DataModel> DataMateri,DataKategori;
     private Context ctx;
     Musupadi ascendant;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mManager;
     public AdapterJadwal(Context ctx, List<DataModel> mList){
         this.ctx = ctx;
         this.mList = mList;
@@ -41,7 +49,20 @@ public class AdapterJadwal extends RecyclerView.Adapter<AdapterJadwal.HolderData
         final DataModel dm = mList.get(posistion);
         ascendant = new Musupadi();
         holderData.Tanggal.setText(dm.getTgl_jadwal());
-        holderData.Jam.setText(dm.getJam_jadwal());
+
+        mManager = new GridLayoutManager(ctx,1);
+        holderData.Materi.setLayoutManager(mManager);
+        DataMateri=mList.get(posistion).getIsi();
+        mAdapter = new AdapterMateri2(ctx,DataMateri);
+        holderData.Materi.setAdapter(mAdapter);
+
+
+
+        mManager = new GridLayoutManager(ctx,3);
+        holderData.Kategori.setLayoutManager(mManager);
+        DataKategori=mList.get(posistion).getKategori();
+        mAdapter = new AdapterKategori(ctx,DataKategori);
+        holderData.Kategori.setAdapter(mAdapter);
     }
 
     @Override
@@ -50,13 +71,15 @@ public class AdapterJadwal extends RecyclerView.Adapter<AdapterJadwal.HolderData
     }
 
     class HolderData extends RecyclerView.ViewHolder{
-        TextView Tanggal,Jam;
+        TextView Tanggal;
         LinearLayout card;
+        RecyclerView Kategori,Materi;
         public HolderData(View v) {
             super(v);
             Tanggal = v.findViewById(R.id.tvTanggal);
-            Jam = v.findViewById(R.id.tvJam);
             card = v.findViewById(R.id.card);
+            Kategori = v.findViewById(R.id.recyclerCategory);
+            Materi = v.findViewById(R.id.recyclerMateri);
         }
     }
 }

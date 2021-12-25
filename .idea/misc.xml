@@ -12,6 +12,7 @@
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/drawable-xxhdpi/rounded_blue.xml" value="0.1125" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/drawable-xxhdpi/rounded_corner.xml" value="0.2203125" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/drawable/dialog_exit.xml" value="0.2203125" />
+        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/drawable/list_kategori.xml" value="0.2203125" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/activity_jadwal.xml" value="0.22" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -22,7 +23,8 @@
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/fragment_about.xml" value="0.22" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/fragment_report.xml" value="0.19067028985507245" />
-        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/list_jadwal.xml" value="0.22" />
+        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/list_jadwal.xml" value="0.2" />
+        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/list_kategori.xml" value="0.17753623188405798" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/layout/list_materi.xml" value="0.22" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/Ekwin/app/src/main/res/mipmap-anydpi-v26/ekwin_logo_round.xml" value="0.215625" />
       </map>

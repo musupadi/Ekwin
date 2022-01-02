@@ -1,6 +1,7 @@
 package com.ascendant.ekwin.API;
 
 import com.ascendant.ekwin.Model.ResponseArrayObject;
+import com.ascendant.ekwin.Model.ResponseJamaah;
 import com.ascendant.ekwin.Model.ResponseObject;
 
 import retrofit2.Call;
@@ -21,4 +22,15 @@ public interface ApiRequest {
 
     @POST("materi")
     Call<ResponseArrayObject> Materi(@Header("Authorization") String authHeader);
+
+    @POST("pendeta")
+    Call<ResponseArrayObject> Pendeta(@Header("Authorization") String authHeader);
+
+    @POST("tema")
+    Call<ResponseArrayObject> Tema(@Header("Authorization") String authHeader);
+
+    @FormUrlEncoded
+    @POST("jamaah")
+    Call<ResponseJamaah> Jamaah(@Header("Authorization") String authHeader,
+                                @Field("kategori") String kategori);
 }

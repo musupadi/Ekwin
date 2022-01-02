@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class Musupadi {
     public String BASE_URL(){
-        String URL = "https://ebuss.fabakonsultan.com/";
+        String URL = "https://jadwalibadah.the-urbandev.com";
         return URL;
     }
     public String SmallText(String description){

@@ -30,7 +30,6 @@
                     <RelativeLayout
                         android:layout_width="50dp"
                         android:layout_height="match_parent">
-
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -39,7 +38,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jamaah"
+                        android:text="Pendeta"
                         android:gravity="center|left"
                         android:fontFamily="@font/gotham"
                         android:textStyle="bold"
@@ -48,42 +47,12 @@
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <Button
-            android:id="@+id/btnTK"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TK/PAUD"
-            android:textColor="@color/colorWhite"
-            android:fontFamily="@font/gotham"
-            android:background="@drawable/btn_rounded_primary"/>
-        <Button
-            android:id="@+id/btnRemaja"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Remaja"
-            android:textColor="@color/colorWhite"
-            android:fontFamily="@font/gotham"
-            android:background="@drawable/btn_rounded_primary"/>
-        <Button
-            android:id="@+id/btnDewasa"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dewasa"
-            android:textColor="@color/colorWhite"
-            android:fontFamily="@font/gotham"
-            android:background="@drawable/btn_rounded_primary"/>
+            android:layout_height="match_parent"
+            android:id="@+id/recycler">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

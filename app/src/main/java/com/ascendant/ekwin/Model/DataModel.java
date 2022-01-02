@@ -86,6 +86,12 @@ public class DataModel {
     @Expose
     String nama_tema;
 
+    @SerializedName("status_pendeta")
+    @Expose
+    String status_pendeta;
+
+
+
 
     @SerializedName("kategori")
     @Expose
@@ -262,4 +268,14 @@ public class DataModel {
     public void setNama_tema(String nama_tema) {
         this.nama_tema = nama_tema;
     }
+
+    public String getStatus_pendeta() {
+        return status_pendeta;
+    }
+
+    public void setStatus_pendeta(String status_pendeta) {
+        this.status_pendeta = status_pendeta;
+    }
+
+
 }

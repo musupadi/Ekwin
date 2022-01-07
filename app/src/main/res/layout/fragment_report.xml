@@ -60,7 +60,8 @@
             android:layout_height="100dp"
             app:cardCornerRadius="10dp"
             android:id="@+id/cardStage1"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:layout_margin="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -94,7 +95,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/linearJadwal">
+            android:id="@+id/linearJadwal"
+            android:layout_margin="10dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,7 +147,8 @@
             android:layout_height="100dp"
             app:cardCornerRadius="10dp"
             android:id="@+id/cardStage2"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:layout_margin="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

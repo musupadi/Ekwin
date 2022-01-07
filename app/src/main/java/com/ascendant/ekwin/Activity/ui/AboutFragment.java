@@ -1,5 +1,7 @@
 package com.ascendant.ekwin.Activity.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -79,7 +81,35 @@ public class AboutFragment extends Fragment {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbHelper.userLogout(getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                // Set a title for alert dialog
+                builder.setTitle("Pemberitahuan");
+
+                // Ask the final question
+                builder.setMessage("Apakah Anda Yakin Ingin Logout ? ");
+
+                // Set the alert dialog yes button click listener
+                builder.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do something when user clicked the Yes button
+                        // Set the TextView visibility GONE
+                        dbHelper.userLogout(getActivity());
+                    }
+                });
+
+                // Set the alert dialog no button click listener
+                builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do something when No button clicked
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                // Display the alert dialog on interface
+                dialog.show();
             }
         });
     }

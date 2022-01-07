@@ -1,5 +1,8 @@
 package com.ascendant.ekwin.Activity.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -48,11 +51,11 @@ public class ReportFragment extends Fragment {
     RecyclerView rvTema,rvPendeta,rv;
     CardView Stage1,Stage2,cardPendeta;
     TextView TemaNamaStage1,tvJadwal,tvNamaTema,idTema,idPendeta,NamaPendeta;
-    LinearLayout LJadwal;
+    LinearLayout LJadwal,cardTema2;
     Button btnPagi,btnSiang,btnSore;
     Musupadi musupadi = new Musupadi();
     String Waktu;
-    LinearLayout LTema,LPendeta;
+    LinearLayout LTema,LPendeta,LinearJadwal2;
     public ReportFragment() {
         // Required empty public constructor
     }
@@ -93,12 +96,40 @@ public class ReportFragment extends Fragment {
         rv = view.findViewById(R.id.recycler);
         cardPendeta = view.findViewById(R.id.cardPendeta);
         NamaPendeta = view.findViewById(R.id.tvNamaPendeta);
+        LinearJadwal2 = view.findViewById(R.id.linearJadwal2);
+        cardTema2 = view.findViewById(R.id.cardNamaTema2);
         rvTema.setVisibility(View.VISIBLE);
         rvPendeta.setVisibility(View.GONE);
         LPendeta.setVisibility(View.GONE);
         TemaData();
         PendetaData();
+        cardPendeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LJadwal.setVisibility(View.GONE);
+                rv.setVisibility(View.GONE);
+                LPendeta.setVisibility(View.VISIBLE);
+                rvPendeta.setVisibility(View.VISIBLE);
+            }
+        });
+        LinearJadwal2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LJadwal.setVisibility(View.VISIBLE);
+            }
+        });
+        cardTema2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Stage2.setVisibility(View.GONE);
+                LTema.setVisibility(View.VISIBLE);
+                rvTema.setVisibility(View.VISIBLE);
+                TemaData();
+                LPendeta.setVisibility(View.GONE);
+                LJadwal.setVisibility(View.GONE);
 
+            }
+        });
         btnPagi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +172,36 @@ public class ReportFragment extends Fragment {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbHelper.userLogout(getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                // Set a title for alert dialog
+                builder.setTitle("Pemberitahuan");
+
+                // Ask the final question
+                builder.setMessage("Apakah Anda Yakin Ingin Logout ? ");
+
+                // Set the alert dialog yes button click listener
+                builder.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do something when user clicked the Yes button
+                        // Set the TextView visibility GONE
+                        dbHelper.userLogout(getActivity());
+                    }
+                });
+
+                // Set the alert dialog no button click listener
+                builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do something when No button clicked
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                // Display the alert dialog on interface
+                dialog.show();
+
             }
         });
     }
@@ -192,7 +252,11 @@ public class ReportFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ResponseArrayObject> call, Throwable t) {
-                Toast.makeText(getActivity(), "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+                try {
+                    Toast.makeText(getActivity(), "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+                }catch (Exception e){
+
+                }
             }
         });
     }

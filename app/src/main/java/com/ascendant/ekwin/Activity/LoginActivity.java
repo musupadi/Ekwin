@@ -76,8 +76,8 @@ public class LoginActivity extends AppCompatActivity {
         login.enqueue(new Callback<ResponseObject>() {
             @Override
             public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
+                pd.hide();
                 try {
-                    pd.hide();
                     if (response.body().getStatus().equals("true")){
                         dbHelper = new DB_Helper(LoginActivity.this);
                         dbHelper.saveSession(response.body().data.getId_user(),response.body().data.getNama_user());
@@ -89,13 +89,13 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }catch (Exception e){
                     Toast.makeText(LoginActivity.this, "Terjadi kesalahan "+e.toString(), Toast.LENGTH_SHORT).show();
-                    pd.hide();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseObject> call, Throwable t) {
-
+                pd.hide();
+                Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
             }
         });
     }

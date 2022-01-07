@@ -33,4 +33,11 @@ public interface ApiRequest {
     @POST("jamaah")
     Call<ResponseJamaah> Jamaah(@Header("Authorization") String authHeader,
                                 @Field("kategori") String kategori);
+
+    @FormUrlEncoded
+    @POST("jadwal")
+    Call<ResponseArrayObject> Search(@Header("Authorization") String authHeader,
+                                @Field("id_pendeta") String id_pendeta,
+                                @Field("id_tema") String id_tema,
+                                @Field("kategori_waktu") String kategori_waktu);
 }

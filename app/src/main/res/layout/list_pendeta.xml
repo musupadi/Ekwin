@@ -6,6 +6,7 @@
     android:id="@+id/linearCard"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardPendeta"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:cardCornerRadius="10dp">

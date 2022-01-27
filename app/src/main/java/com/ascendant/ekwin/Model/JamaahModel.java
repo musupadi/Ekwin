@@ -24,6 +24,15 @@ public class JamaahModel {
     @Expose
     String email;
 
+    @SerializedName("status")
+    @Expose
+    String status;
+
+    @SerializedName("data")
+    @Expose
+    String data;
+
+
     public String getNama_jamaah() {
         return nama_jamaah;
     }
@@ -62,5 +71,21 @@ public class JamaahModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

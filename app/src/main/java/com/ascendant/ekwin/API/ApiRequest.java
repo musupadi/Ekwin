@@ -1,5 +1,6 @@
 package com.ascendant.ekwin.API;
 
+import com.ascendant.ekwin.Model.JamaahModel;
 import com.ascendant.ekwin.Model.ResponseArrayObject;
 import com.ascendant.ekwin.Model.ResponseJamaah;
 import com.ascendant.ekwin.Model.ResponseObject;
@@ -42,4 +43,14 @@ public interface ApiRequest {
                                 @Field("id_pendeta") String id_pendeta,
                                 @Field("id_tema") String id_tema,
                                 @Field("kategori_waktu") String kategori_waktu);
+
+    @FormUrlEncoded
+    @POST("user/register")
+    Call<JamaahModel> Register(@Header("Authorization") String authHeader,
+                               @Field("nama_jamaah") String nama_jamaah,
+                               @Field("no_hp") String no_hp,
+                               @Field("alamat") String alamat,
+                               @Field("email") String email,
+                               @Field("password_jamaah") String password_jamaah,
+                               @Field("kategori") String kategori);
 }

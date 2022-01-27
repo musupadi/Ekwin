@@ -34,6 +34,8 @@ public interface ApiRequest {
     Call<ResponseJamaah> Jamaah(@Header("Authorization") String authHeader,
                                 @Field("kategori") String kategori);
 
+
+
     @FormUrlEncoded
     @POST("jadwal")
     Call<ResponseArrayObject> Search(@Header("Authorization") String authHeader,

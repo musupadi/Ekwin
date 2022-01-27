@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoAction">
         <activity
+            android:name=".Activity.ui.Home.Data.DataActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.RegisterActivity"
             android:exported="false" />
         <activity

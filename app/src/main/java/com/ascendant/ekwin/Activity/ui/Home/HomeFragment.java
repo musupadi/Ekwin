@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ascendant.ekwin.Activity.ui.Home.Data.DataActivity;
 import com.ascendant.ekwin.Activity.ui.Home.Jadwal.JadwalActivity;
 import com.ascendant.ekwin.Activity.ui.Home.Materi.MateriActivity;
 import com.ascendant.ekwin.Activity.ui.Home.Pendeta.PendetaActivity;
@@ -25,7 +26,7 @@ import com.ascendant.ekwin.R;
 import com.ascendant.ekwin.SharedPreferance.DB_Helper;
 
 public class HomeFragment extends Fragment {
-    CardView cardJadwal,cardMateri,cardUmur,cardPendeta,cardTema;
+    CardView cardJadwal,cardMateri,cardUmur,cardPendeta,cardTema,cardData;
     ImageView Logout;
     DB_Helper dbHelper;
     public HomeFragment() {
@@ -87,6 +88,7 @@ public class HomeFragment extends Fragment {
         cardUmur = view.findViewById(R.id.cardUmur);
         cardPendeta = view.findViewById(R.id.cardPendettal);
         cardTema = view.findViewById(R.id.cardTema);
+        cardData = view.findViewById(R.id.cardData);
         cardJadwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,6 +121,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), TemaActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DataActivity.class);
                 startActivity(intent);
             }
         });

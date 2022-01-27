@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoAction">
         <activity
+            android:name=".Activity.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ui.Home.Umur.JamaahActivity"
             android:exported="true" />
         <activity

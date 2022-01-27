@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="kategori">
+        <item>DEWASA</item>
+        <item>REMAJA</item>
+        <item>TK</item>
+    </string-array>
+
+    <string-array name="itemIds">
+        <item>gallery_image</item>
+        <item>camera_image</item>
+    </string-array>
+    <string-array name="tbk">
+        <item>Semua</item>
+        <item>TBK</item>
+        <item>Non TBK</item>
+    </string-array>
+
+    <string-array name="tipe">
+        <item>Semua Tipe</item>
+        <item>FMCG</item>
+        <item>Distributor</item>
+    </string-array>
+    <string-array name="Loading">
+        <item>Loading</item>
+        <item>camera_image</item>
+    </string-array>
+
+    <string-array name="dinas_pendidikan">
+        <item>Surat PDF</item>
+        <item>Artikel</item>
+    </string-array>
+
+    <string-array name="Kelas">
+        <item>Semua Kelas</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>D Pratama</item>
+        <item>Belum Ditetapkan</item>
+    </string-array>
+    <string-array name="KELAS">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
+
+    <string-array name="lembaga">
+        <item>SMP</item>
+        <item>MTS</item>
+        <item>SMA</item>
+        <item>MA</item>
+        <item>SMK</item>
+    </string-array>
+
+    <string-array name="piket">
+        <item>Piket</item>
+        <item>Mengajar</item>
+    </string-array>
+
+    <string-array name="media_pembelajaran">
+        <item>Tematik Pembelajaran</item>
+        <item>Cerita dan Dongeng</item>
+        <item>Gerak dan Lagu</item>
+    </string-array>
+    <string-array name="FMCG_KATEGORI">
+        <item>SEMUA</item>
+        <item>F&amp;B</item>
+        <item>NON F&amp;B</item>
+    </string-array>
+
+    <string-array name="JenisPeraturan">
+        <item>Pilih Jenis Peraturan</item>
+        <item>Peraturan1</item>
+        <item>Peraturan2</item>
+        <item>Peraturan3</item>
+        <item>Peraturan4</item>
+        <item>Peraturan5</item>
+        <item>Peraturan6</item>
+    </string-array>
+
+    <string-array name="Category">
+        <item>All Category</item>
+        <item>Healthcare</item>
+        <item>FMCG</item>
+        <item>Mining</item>
+        <item>Contractor</item>
+        <item>Oil And Gas</item>
+        <item>Farm</item>
+    </string-array>
+
+    <string-array name="ChoseCategory">
+        <item>Choose Category</item>
+        <item>Healthcare</item>
+        <item>FMCG</item>
+        <item>Mining</item>
+        <item>Contractor</item>
+        <item>Oil And Gas</item>
+        <item>Farm</item>
+    </string-array>
+
+    <string-array name="PlayersFarmer">
+        <item>Semua</item>
+        <item>Peternakan Sapi</item>
+        <item>Perusahaan Unggas</item>
+        <item>Perusahaan Pakan Ternak</item>
+        <item>Pengholahan Susu</item>
+        <item>Pengholahan Daging</item>
+        <item>Obat</item>
+        <item>Media Informasi Peternakan</item>
+    </string-array>
+
+    <string-array name="Beef">
+        <item>Peternakan Sapi</item>
+        <item>Pengholahan Susu</item>
+        <item>Pengholahan Daging</item>
+    </string-array>
+
+    <string-array name="Polutry">
+        <item>Perusahaan Unggas</item>
+    </string-array>
+
+    <string-array name="SupportingIndustriesr">
+        <item>Perusahaan Pakan Ternak</item>
+        <item>Obat</item>
+        <item>Media Informasi Peternakan</item>
+    </string-array>
+
+
+</resources>

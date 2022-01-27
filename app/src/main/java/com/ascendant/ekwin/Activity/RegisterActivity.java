@@ -6,12 +6,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ascendant.ekwin.API.ApiRequest;
@@ -25,22 +23,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText Password,Username;
     ImageView eye;
     Boolean SeenPass=true;
-    Button Login,Register;
+    Button Login;
     Musupadi musupadi = new Musupadi();
     DB_Helper dbHelper = new DB_Helper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
         Username = findViewById(R.id.etUsername);
         Password = findViewById(R.id.etPassword);
         eye = findViewById(R.id.ivEye);
         Login = findViewById(R.id.btnLogin);
-        Register = findViewById(R.id.btnRegister);
         eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,13 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                 Logic();
             }
         });
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
     }
     private void Logic(){
         final ProgressDialog pd = new ProgressDialog(this);
@@ -87,23 +77,23 @@ public class LoginActivity extends AppCompatActivity {
                 pd.hide();
                 try {
                     if (response.body().getStatus().equals("true")){
-                        dbHelper = new DB_Helper(LoginActivity.this);
+                        dbHelper = new DB_Helper(RegisterActivity.this);
                         dbHelper.saveSession(response.body().data.getId_user(),response.body().data.getNama_user());
-                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                        Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
                         startActivity(intent);
                         finish();
                     }else{
-                        Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception e){
-                    Toast.makeText(LoginActivity.this, "Terjadi kesalahan "+e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Terjadi kesalahan "+e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseObject> call, Throwable t) {
                 pd.hide();
-                Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
             }
         });
     }
